@@ -1,16 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Happenings from "./pages/Happenings";
+import Rules from "./pages/Rules";
+import About from "./pages/About";
 
 function App() {
-  const [count, setCount] = useState(0)
+  let Component;
 
-  
+  console.log(window);
+
+  switch (window.location.pathname) {
+    case "/happenings":
+      Component = Happenings;
+      break;
+    case "/rules":
+      Component = Rules;
+      break;
+    case "/about":
+      Component = About;
+      break;
+    default:
+    case "/":
+      Component = Home;
+  }
 
   return (
-    <h1>Hello World</h1>
-  )
+    <>
+      <Navbar />
+      <Component />
+      <p className="MilitaryReport">
+        This is a test of what a military report will look like
+      </p>
+    </>
+  );
 }
 
-export default App
+export default App;
