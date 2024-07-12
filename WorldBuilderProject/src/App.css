@@ -3,8 +3,18 @@
 }
 
 @font-face {
-  font-family: MilitaryReport;
+  font-family: MilitaryReportFont;
   src: url(./assets/fonts/1942.ttf);
+}
+
+@font-face {
+  font-family: NewspaperBodyFont;
+  src: url(./assets/fonts/OldNewspaper.ttf);
+}
+
+@font-face {
+  font-family: NewspaperHeadFont;
+  src: url(./assets/fonts/Chomsky.otf);
 }
 
 .nav {
@@ -47,6 +57,38 @@
   background-color: #777;
 }
 
-.MilitaryReport {
-  font-family: MilitaryReport !important;
+.NewspaperBackground {
+  background-image: url("./assets/PaperImage.jpg") !important;
+  background-repeat: none;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  box-shadow: 5px 10px #878787;
+  height: 50rem;
+}
+
+.MilitaryReportFont {
+  font-family: MilitaryReportFont !important;
+}
+
+.Newspaper {
+  background-image: url("./assets/PaperImage.jpg") !important;
+}
+
+.NewspaperBodyFont {
+  font-family: NewspaperBodyFont !important;
+}
+
+.NewspaperHead {
+ text-align: center;
+ margin: 8px 2px 4px 2px;
+}
+
+.NewspaperHead h1 {
+  font-size: 4rem;
+  font-family: NewspaperHeadFont !important;
+  border-bottom: 4px double black;
+}
+
+.column + .column { 
+  border-left: 1px solid #2f2f2f;
 }

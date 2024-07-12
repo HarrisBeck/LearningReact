@@ -11,8 +11,6 @@ import About from "./pages/About";
 function App() {
   let Component;
 
-  console.log(window);
-
   switch (window.location.pathname) {
     case "/happenings":
       Component = Happenings;
@@ -31,10 +29,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <Component />
-      <p className="MilitaryReport">
-        This is a test of what a military report will look like
-      </p>
+      <div className="mx-5 my-4">
+        <Component />
+      </div>
     </>
   );
 }
