@@ -1,7 +1,5 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import { BrowserRouter, Route, Routes, Link } from "react-router";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Happenings from "./pages/Happenings";
@@ -9,30 +7,16 @@ import Rules from "./pages/Rules";
 import About from "./pages/About";
 
 function App() {
-  let Component;
-
-  switch (window.location.pathname) {
-    case "/happenings":
-      Component = Happenings;
-      break;
-    case "/rules":
-      Component = Rules;
-      break;
-    case "/about":
-      Component = About;
-      break;
-    default:
-    case "/":
-      Component = Home;
-  }
-
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <div className="mx-5 my-4">
-        <Component />
-      </div>
-    </>
+        <Routes>
+          <Route exact path="/" element={<Home/>}>Home</Route>
+          <Route exact path="/happenings" element={<Happenings/>}>Happenings</Route>
+          <Route exact path="/rules" element={<Rules/>}>Rules</Route>
+          <Route exact path="/about" element={<About/>}>About</Route>
+        </Routes>
+    </BrowserRouter>
   );
 }
 

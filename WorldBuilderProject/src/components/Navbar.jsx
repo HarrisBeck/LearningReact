@@ -1,3 +1,5 @@
+import { Link } from "react-router"
+
 function Navbar() {
   return (
     <nav className="nav">
@@ -5,9 +7,9 @@ function Navbar() {
         World
       </a>
       <ul>
-        <CustomLink href="/happenings" value="Happenings"/>
-        <CustomLink href="/rules" value="Rules"/>
-        <CustomLink href="/about" value="About"/>
+        <Link to="/happenings" value="Happenings">Happenings</Link>
+        <Link to="/rules" value="Rules">Rules</Link>
+        <Link to="/about" value="About">About</Link>
       </ul>
     </nav>
   )
